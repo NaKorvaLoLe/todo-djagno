@@ -1,6 +1,23 @@
 {% extends "todo/base.html" %}
 {% block content %}
-    Curernt
+    <il>
+        {% for todo in todos %}
+            <li>{% if todo.important %}
+                <b>
+                    {{ todo.title }}
+                </b>
+                {% else %}
+                    {{ todo.title }}
+                {% endif %}
+                
+                {% if todo.description %}
+                    - {{ todo.description }}
+                {% endif %}
+            </li>
+                
+        {% endfor %}
+
+    </ul>
 {% endblock  %}
 
 
