@@ -128,3 +128,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 sys.path.insert(0, os.path.join('BASE_DIR', 'apps'))
+
+LOGIN_URL = '/login'

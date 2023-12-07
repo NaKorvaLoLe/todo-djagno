@@ -1,17 +1,39 @@
-{% if user.is_authenticated %}
-    Вы вошли и как {{ user.username }}
-    <form action="{% url "logoutuser" %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Выйти</button>
-    </form>
-{% else %}
-    <a href="{% url "signupuser" %}">Войти</a>
-    <a href="{% url "loginuser" %}">Зарегистрироваться</a>
-{% endif %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ToDo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            Вы вошли и как {{ user.username }}
+            <a href="{% url "createtodo" %}">Создать задачу</a>
+            <a href="{% url "currenttodos" %}">Текушие задачи</a>
+            <a href="{% url "completedtodos" %}">Выполненые задачи</a>
+            <form action="{% url "logoutuser" %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Выйти</button>
+            </form>
+        {% else %}
+            <a href="{% url "loginuser" %}">Войти</a>
+            <a href="{% url "signupuser" %}">Зарегистрироваться</a>
+        {% endif %}
 
-{% block content %}
+        {% block content %}
 
 
-{% endblock %}
+        {% endblock %}
+
+        <script src="" async defer></script>
+    </body>
+</html>
 
 
