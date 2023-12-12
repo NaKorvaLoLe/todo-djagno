@@ -1,5 +1,19 @@
 {% extends "todo/base.html" %}
-{% block content %}
-    <h1>Home</h1>
-{% endblock  %}
 
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Ваши задачи</h1>
+            <p>Жизнь - это весело. Но жизнь также и насыщенная. Есть миллион разных вещей, которыми вы могли бы заниматься. Но важно то, что вы делаете. Мы создали ToDo, чтобы помочь вам осознать все ваши возможности и жить той жизнью, которая для вас важнее всего. Вас ждет новая организованная жизнь.</p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Начать</a>
+        </div>
+    </div>
+
+{% endblock %}
